@@ -9,7 +9,7 @@
 "네오"는 다음과 같이 7단계의 순차적인 처리 과정을 통해 신규 유저가 입력한 아이디가 카카오 아이디 규칙에 맞는 지 검사하고 규칙에 맞지 않은 경우 규칙에 맞는 새로운 아이디를 추천해 주려고 합니다.
 
 신규 유저가 입력한 아이디가 new_id 라고 한다면,
-1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다. 🔴
+1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
 2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.
 3단계 new_id에서 마침표(.)가 2번 이상 연속된 부분을 하나의 마침표(.)로 치환합니다.
 4단계 new_id에서 마침표(.)가 처음이나 끝에 위치한다면 제거합니다.
@@ -21,13 +21,59 @@
 
 // 정규식 문제! 정규식을 배워보자.
 
-let a = "...!@BaT#*..y.abcdefghijklm";
+let a = "z-+.^.";
 
 function solution(new_id) {
-  let answer = new_id.toLowerCase().replace(/[^\w-_.]/g, "");
+  // 1단계
+  let answer = new_id.toLowerCase();
+  console.log("1단계:" + answer);
 
-  console.log(answer);
+  // 2단계
+  answer = answer.replace(/[^\w-_.]/g, "");
+  console.log("2단계:" + answer);
+
+  // 3단계
+  answer = answer.replace(/[.]{2,}/g, ".");
+  console.log("3단계:" + answer);
+
+  // 4단계
+  answer = answer.replace(/^\.|\.$/g, "");
+  console.log("4단계:" + answer);
+
+  // 5단계
+  if (answer.length === 0) answer = "a";
+  console.log("5단계:" + answer);
+
+  // 6단계
+  if (answer.length >= 16) answer = answer.slice(0, 15).replace(/\.$/g, "");
+  console.log("6단계:" + answer);
+
+  //7단계
+  if (answer.length <= 2) {
+    while (answer.length < 3) {
+      answer += answer[answer.length - 1];
+    }
+  }
+  console.log("7단계:" + answer);
+
   return answer;
 }
 
 solution(a);
+
+/*
+정규표현식을 배웠다. 3일동안 정규표현식 연습사이트로 연습해야겠다.
+
+🤖다른 사람의 풀이
+function solution(new_id) {
+    const answer = new_id
+        .toLowerCase() // 1
+        .replace(/[^\w-_.]/g, '') // 2
+        .replace(/\.+/g, '.') // 3
+        .replace(/^\.|\.$/g, '') // 4
+        .replace(/^$/, 'a') // 5  📌📌📌
+        .slice(0, 15).replace(/\.$/, ''); // 6 📌📌📌
+    const len = answer.length;
+    return len > 2 ? answer : answer + answer.charAt(len - 1).repeat(3 - len); 📌마지막 삼항연산자로 마무리!
+}
+*/
