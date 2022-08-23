@@ -4,19 +4,12 @@ const odd = -11;
 const even = 0;
 
 function solution(num) {
-  let answer = "";
-  if (num % 2 === 1) {
-    answer = "Odd";
-  } else if (num % 2 === 0) {
-    answer = "Even";
-  } else {
-    answer = num % 2;
-  }
-  return answer;
+  return num % 2 ? "Odd" : "Even";
 }
 
 console.log(solution(odd));
 console.log(solution(even));
+console.log(!!-1); //true
 // 📌틀린 이유 : -3을 대입하면 -1이 나온다!
 
 // 다른 사람의 풀이
