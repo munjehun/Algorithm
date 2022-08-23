@@ -17,3 +17,13 @@ function solution(num) {
 
 console.log(solution(odd));
 console.log(solution(even));
+// 📌틀린 이유 : -3을 대입하면 -1이 나온다!
+
+// 다른 사람의 풀이
+/*
+function evenOrOdd(num) {
+  return num % 2 ? "Odd" : "Even";
+}
+
+📌조건문은 삼항 연산자로 간단하게!
+*/
