@@ -8,27 +8,43 @@
 10203 → "1zerotwozero3"
 
 이렇게 숫자의 일부 자릿수가 영단어로 바뀌어졌거나, 혹은 바뀌지 않고 그대로인 문자열 s가 매개변수로 주어집니다.
-s가 의미하는 원래 숫자를 return 하도록 solution 함수를 완성해주세요.
+s가 의미하는 원래 ✂️숫자를 return 📍📍📍(string => number!!) 하도록 solution 함수를 완성해주세요.
 */
 const a = "1zerotwozero3";
 const b = "one4seveneight";
 
 function solution(s) {
-  let answer = s;
-  answer = answer
-    .replace(/zero/g, "0")
-    .replace(/one/g, "1")
-    .replace(/two/g, "2")
-    .replace(/three/g, "3")
-    .replace(/four/g, "4")
-    .replace(/five/g, "5")
-    .replace(/six/g, "6")
-    .replace(/seven/g, "7")
-    .replace(/eight/g, "8")
-    .replace(/nine/g, "9");
-  console.log(answer);
-  return answer;
+  return Number(
+    s
+      .replace(/zero/g, "0")
+      .replace(/one/g, "1")
+      .replace(/two/g, "2")
+      .replace(/three/g, "3")
+      .replace(/four/g, "4")
+      .replace(/five/g, "5")
+      .replace(/six/g, "6")
+      .replace(/seven/g, "7")
+      .replace(/eight/g, "8")
+      .replace(/nine/g, "9")
+  );
 }
 
-console.log(solution(a));
-console.log(solution(b));
+console.log(solution(a)); //10203
+console.log(solution(b)); //1478
+
+// 정규표현식 배웠으니 바로 써먹기! s를 Number 안 씌워줘서 자꾸 통과가 안됐다!
+
+/* 다른 사람의 풀이
+
+function solution(s) {
+    let numbers = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+    var answer = s;
+
+    for(let i=0; i< numbers.length; i++) {
+        let arr = answer.split(numbers[i]);
+        answer = arr.join(i);
+    }
+
+    return Number(answer);
+}
+*/
