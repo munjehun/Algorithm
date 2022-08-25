@@ -37,7 +37,7 @@ solution(a, b);
 // sort((a,b)=>a-b) 라고 해 주어야 오름차순으로 정렬된다.
 
 /*
-다른 사람의 풀이
+🤖다른 사람의 풀이
 
 function solution(array, commands) {
     var answer = [];
@@ -47,4 +47,6 @@ function solution(array, commands) {
     })
     return answer;
 }
+
+=> map으로 새로운 배열로 변환하는 것도 방법!
 */
