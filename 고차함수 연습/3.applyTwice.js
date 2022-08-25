@@ -13,11 +13,11 @@ function square(num) {
 }
 
 let output = applyTwice(square, 2);
-console.log(output);
+console.log(output); //16
 
 function add5(num) {
   return num + 5;
 }
 
 output = applyTwice(add5, 3);
-console.log(output);
+console.log(output); //13

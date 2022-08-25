@@ -16,6 +16,6 @@ function add5(num) {
 }
 
 let output = functionParameter(square, 2);
-console.log(output);
+console.log(output); //4
 output = functionParameter(add5, 3);
-console.log(output);
+console.log(output); //8
