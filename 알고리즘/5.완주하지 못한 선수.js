@@ -31,23 +31,29 @@ function solution(participant, completion) {
 solution(a, b);
 // 이건 약간 잔머리?식으로 푼 방법인듯. 어쨌거나 못풀어서 결국 구글링해서 따라했다.
 
-/*다른 사람의 풀이
+/*
+🤖다른 사람의 풀이
 
 function solution(participant, completion) {
-    const map = new Map();
+  const map = new Map(); //맵을 만듦
 
-    for(let i = 0; i < participant.length; i++) {
-        let a = participant[i], 
-            b = completion[i];
+  for (let i = 0; i < participant.length; i++) {
+    let a = participant[i];
+    let b = completion[i];
 
-        map.set(a, (map.get(a) || 0) + 1);
-        map.set(b, (map.get(b) || 0) - 1);
+    map.set(a, (map.get(a) || 0) + 1); //map에 a가 있으면 +1 없으면 0
+    map.set(b, (map.get(b) || 0) - 1); //map에 b가 있으면 -1 없으면 0
+    console.log(map);
+  }
+
+  for (let [k, v] of map) {
+    if (v > 0) {
+      console.log(k);
+      return k;
     }
-
-    for(let [k, v] of map) {
-        if(v > 0) return k;
-    }
-
-    return 'nothing';
+  }
+  return "nothing";
 }
+solution(a, b);
+
 */
