@@ -35,14 +35,14 @@ solution(a, b);
 🤖다른 사람의 풀이
 
 function solution(participant, completion) {
-  const map = new Map(); //맵을 만듦
+  const map = new Map(); //📌맵을 만듦
 
   for (let i = 0; i < participant.length; i++) {
     let a = participant[i];
     let b = completion[i];
 
-    map.set(a, (map.get(a) || 0) + 1); //map에 a가 있으면 +1 없으면 0
-    map.set(b, (map.get(b) || 0) - 1); //map에 b가 있으면 -1 없으면 0
+    map.set(a, (map.get(a) || 0) + 1); //📌map에 a가 있으면 +1 없으면 0
+    map.set(b, (map.get(b) || 0) - 1); //📌map에 b가 있으면 -1 없으면 0
     console.log(map);
   }
 
