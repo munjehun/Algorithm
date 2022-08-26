@@ -18,11 +18,11 @@ function solution(arr) {
   c = arr.reduce((a, b) => {
     return a < b ? a : b;
   });
-  console.log("c:", c);
+  // console.log("c:", c);
   let answer = arr.filter((i) => i !== c);
-  console.log("answer:", answer);
+  // console.log("answer:", answer);
   if (answer.length === 0) answer.push(-1);
-  console.log(answer);
+  // console.log(answer);
   return answer;
 }
 
