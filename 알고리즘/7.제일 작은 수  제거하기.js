@@ -26,5 +26,5 @@ function solution(arr) {
   return answer;
 }
 
-solution(a);
-solution(b);
+solution(a); //[4,3,2,5]
+solution(b); //[-1]
