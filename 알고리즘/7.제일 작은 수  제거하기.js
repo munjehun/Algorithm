@@ -33,7 +33,7 @@ solution(b); //[-1]
 🤖다른 사람의 풀이
 
 function solution(arr) {
-    arr.splice(arr.indexOf(Math.min(...arr)),1);
+    arr.splice(arr.indexOf(Math.min(...arr)),1);  => 배열에서 제일 작은 수 하나를 제거!
     if(arr.length<1)return[-1];
     return arr;
 }
