@@ -3,11 +3,11 @@
 */
 
 function pipe(...func) {
-  let funcs = [...func];
   return function (num) {
-    for (let i of funcs) {
-      return i(num);
+    for (let i of func) {
+      num = i(num);
     }
+    return num;
   };
 }
 
