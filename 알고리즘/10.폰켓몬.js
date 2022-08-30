@@ -24,7 +24,7 @@ N마리 폰켓몬의 종류 번호가 담긴 배열 nums가 매개변수로 주�
  
  */
 
-let nums = [3, 3, 3, 2, 2, 2];
+let nums = [3, 3, 3, 2, 2, 4];
 function solution(nums) {
   let choiceNums = nums.length / 2;
   console.log(new Set(nums));
