@@ -7,9 +7,10 @@
 */
 
 function solution(a, b) {
-  let date = new Date(2016 + "-" + a + "-" + b);
+  let date = new Date(2016, a - 1, b, 11);
   let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   let day = week[date.getDay()];
+  console.log(date);
   console.log(day);
   return day;
 }
@@ -18,3 +19,14 @@ solution(1, 3);
 solution(11, 1);
 solution(2, 12);
 solution(2, 29);
+
+// => new Date() 클래스로 날짜를 입력
+
+/*💯💯💯new Date 구문💯💯💯
+monthIndex = 0 ~ 11 (1월 ~ 12월)
+new Date(year, monthIndex); 
+new Date(year, monthIndex, day);
+new Date(year, monthIndex, day, hours);
+new Date(year, monthIndex, day, hours, minutes);
+new Date(year, monthIndex, day, hours, minutes, seconds);
+*/
