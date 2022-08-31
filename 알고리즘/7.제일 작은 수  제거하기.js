@@ -38,5 +38,30 @@ function solution(arr) {
     return arr;
 }
 
-=> splice, indexOf, Math.min 사용!
+📢 splice = 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경
+
+array.splice(start, deleteCount, item)
+
+start - 변경할 인덱스
+deleteCount - 삭제할 요소 갯수
+item - 배열에 추가할 요소. 아무 요소도 지정하지 않으면 splice()는 요소를 제거하기만.
+
+📢 Math.min = 주어진 숫자들 중 가장 작은 값을 반환.
+
+const nums = [1, 2, 3]
+Math.min(...nums) // 1
+
+📢 indexOf = 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 존재하지 않으면 -1을 반환합니다.
+
+arr.indexOf(searchElement[, fromIndex]);
+
+-searchElement : 배열에서 찾을 요소입니다.
+-fromIndex Optional : 검색을 시작할 위치입니다.
+
+ex)
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison')); // 1
+console.log(beasts.indexOf('bison', 2)); // 4
+console.log(beasts.indexOf('giraffe')); // -1
 */
