@@ -6,6 +6,7 @@
 ▫️리턴되는 함수는 정수를 입력받아 func2, func1의 순으로 적용합니다.
 */
 
+// 나의 풀이
 function compose2(func1, func2) {
   return function (num) {
     return func1(func2(num));

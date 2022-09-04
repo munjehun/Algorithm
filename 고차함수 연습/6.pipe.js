@@ -2,6 +2,7 @@
 함수들을 입력받아 함수들이 입력된 차례대로 결합된 새로운 함수를 리턴해야 합니다.
 */
 
+// 나의 풀이
 function pipe(...func) {
   return function (num) {
     for (let i of func) {
