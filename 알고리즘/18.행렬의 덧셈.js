@@ -11,30 +11,20 @@ let arr2 = [
   [5, 6],
 ];
 
-// console.log(arr1[0][0]);
-// console.log(arr1[0][1]);
-// console.log(arr1[1][1]);
-// console.log(arr1[1][0]);
-
-// console.log(arr2[0][0]);
-// console.log(arr2[0][1]);
-// console.log(arr2[1][1]);
-// console.log(arr2[1][0]);
-
-// console.log(
-//   [arr1[0][0] + arr2[0][0], arr1[0][1] + arr2[0][1]],
-//   [arr1[1][0] + arr2[1][0], arr1[1][1] + arr2[1][1]]
-// );
 function solution(arr1, arr2) {
   var answer = [];
   for (let i = 0; i < arr1.length; i++) {
-    for (let j = 0; j < arr2.length; j++) {
-      answer.push(arr1[i][j] + arr2[i][j]);
+    let sum = [];
+    for (let j = 0; j < arr1[0].length; j++) {
+      sum.push(arr1[i][j] + arr2[i][j]);
+      // console.log(sum);
     }
+    answer.push(sum);
   }
-  answer.filter((i) => i !== NaN);
-  console.log(answer);
+  // console.log(answer);
+  return answer;
 }
+// 그냥 논리력 부족인듯.. 좀 더 파고들어서 계산하지 않아서 그런듯.
 
 solution(
   [
