@@ -37,3 +37,14 @@ solution(
   ]
 );
 solution([[1], [2]], [[3], [4]]);
+
+/*
+🤖 다른 사람의 풀이
+
+function sumMatrix(A,B){
+  
+  return A.map((a,i) => a.map((b, j) => b + B[i][j]));
+}
+
+⚡️ 배열 안에 배열이 있기 때문에  map을 두 번 사용 (index 이용해서 풀이)
+*/
