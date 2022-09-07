@@ -50,5 +50,4 @@ console.log(typeof a); // number
 a = a * 6;
 console.log(a); // 12
 console.log(typeof a); // number
-
 */
