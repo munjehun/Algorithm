@@ -4,16 +4,10 @@
 */
 
 function solution(n) {
-  console.log(
-    n
-      .toString()
-      .split("")
-      .reduce((a, b) => +a + +b)
-  );
   return n
     .toString()
     .split("")
-    .reduce((a, b) => +a + +b);
+    .reduce((a, b) => +a + +b, 0);
 }
 
-solution(123);
+solution(123); // 6
