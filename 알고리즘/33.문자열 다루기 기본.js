@@ -13,7 +13,7 @@ solution("a234"); //false
 solution("1234"); //true
 solution("1123asd4"); //false
 
-// console.log(Number.isInteger(parseInt(10e1))); //true
+console.log(Number.isInteger(parseInt(10e1))); //true
 //=> 인자로 10e1가 들어오는 경우 숫자화 시키면 숫자가 된다! 따라서 e를 다른 문자로 바꿔주고 풀이
 
 /*
