@@ -25,12 +25,16 @@ solution("try hello world"); //TrY HeLlO WoRlD
 /*
 🤖 다른 사람의 풀이
 
-
-
-*/
 function toWeirdCase(s) {
-  //함수를 완성해주세요
   return s.toUpperCase().replace(/(\w)(\w)/g, function (a) {
     return a[0].toUpperCase() + a[1].toLowerCase();
   });
 }
+
+⚡️ 정규식으로 풀이!
+toUpperCase()로 문자열을 대문자로, replace()로 문자를 변경
+
+📢 a.replace(b,c) : a에서 b에 매칭되는 항목을 c로 변환
+    └ /(\w)(\w)/g : 영어 알파벳, 숫자, 언더스코어 중에 2글자
+    └ function (a) : c에 함수를 넣어도 된다! b에 매치하는 것을 a로 두고 풀이했다.
+*/
