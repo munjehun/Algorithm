@@ -30,23 +30,3 @@ solution(2, 5); //[1, 10]
 
 // => for문에서 할당을 해주면 덮어씌우는 것 알기!
 // => 두 수의 배수에서 최소공배수를 찾으려 했는데, 반대로 어떤 수로 나눠서 0이 되는 최솟값을 구하기!
-
-/*
-🤖 다른 사람의 풀이
-
-function greatestCommonDivisor(a, b) {
-  return b ? greatestCommonDivisor(b, a % b) : Math.abs(a);
-}
-
-function leastCommonMultipleOfTwo(a, b) {
-  return (a * b) / greatestCommonDivisor(a, b);
-}
-
-function gcdlcm(a, b) {
-    return [greatestCommonDivisor(a, b),leastCommonMultipleOfTwo(a, b)];
-}
-
-⚡️ 재귀용법과 유클리드 호제법으로 풀이
-
-
-*/
