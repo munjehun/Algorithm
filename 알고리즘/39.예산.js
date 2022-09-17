@@ -42,5 +42,5 @@ function solution(d, budget) {
     return d.length;
 }
 
-⚡️ 복습! while(조건){ } => 조건문이 참이면 { }코드( d.pop() )를 계속 실행!
+⚡️ 복습! while(조건){ } => 조건문이 참이면 { }코드 d.pop() 를 계속 실행!
 */
