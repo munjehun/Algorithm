@@ -14,7 +14,6 @@ S사에서는 각 부서에 필요한 물품을 지원해 주기 위해 부서�
 ◽️ budget은 예산을 나타내며, 1 이상 10,000,000 이하의 자연수입니다.
 */
 
-// 조합으로 budget과 딱 맞는수 만들기(최대 수로)
 function solution(d, budget) {
   let answer = 0;
   let sum = 0;
@@ -43,5 +42,5 @@ function solution(d, budget) {
     return d.length;
 }
 
-⚡️ 복습! while(조건){ } => 조건문이 참이면 { }코드를 계속 실행!
+⚡️ 복습! while(조건){ } => 조건문이 참이면 { }코드( d.pop() )를 계속 실행!
 */
