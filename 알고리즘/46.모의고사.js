@@ -35,7 +35,7 @@ function solution(answers) {
   }
   return answer;
 }
-// => Math.max로 최대 정답수를 구하고 수포자들의 정답수와 비교하는 것이 관건!
+// => Math.max로 수포자들 중의 최대 정답수를 구하고 다른 수포자들의 정답수와 비교하는 것이 관건!
 
 solution([1, 3, 2, 4, 2]);
 solution([1, 3, 2, 4, 2, 1, 2, 5]);
