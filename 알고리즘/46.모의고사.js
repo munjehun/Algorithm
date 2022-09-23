@@ -11,8 +11,6 @@
 */
 
 function solution(answers) {
-  let answer = [];
-
   let arr = [
     [1, 2, 3, 4, 5],
     [2, 1, 2, 3, 2, 4, 2, 5],
@@ -30,6 +28,7 @@ function solution(answers) {
     .map((arr) => arr.filter((i, index) => i == answers[index]).length);
 
   const maxScore = Math.max(...arr); //최대 정답 수
+  let answer = [];
 
   for (let i = 0; i < 3; i++) {
     if (arr[i] === maxScore) answer.push(i + 1); //최대 정답 수와 수포자들의 정답의 수가 같으면 추가
