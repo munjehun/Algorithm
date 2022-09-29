@@ -74,10 +74,3 @@ function eratos(num) {
   return arr;
 }
 eratos(10); //[ 2, 3, 5, 7 ]
-
-arr1 = [1, 2, 3, 4, 5];
-console.log(
-  arr1.filter((i) => {
-    if (i > 3) return true;
-  })
-);
