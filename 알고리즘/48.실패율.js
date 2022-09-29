@@ -21,10 +21,6 @@
   ◾️스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 으로 정의한다.
 */
 
-//result는 1부터 N 전까지의 숫자가 들어간다.
-//stages에서 N+1이 있으면 filter로 제외하고, 마지막에 result에는 N을 푸쉬한다.
-//answer를 돌면서 해당 원소가 stages에 몇개 들어있는지 파악해서 stages의 길이로 나눈걸 리턴 =>실패율
-//stages를 돌면서 원소 하나의 갯수를 stages의 길이로 나눈다 => 실패율
 function solution(N, stages) {
   let stageNFailRate = [];
   for (let stage = 1; stage <= N; stage++) {
