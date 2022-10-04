@@ -76,7 +76,7 @@ solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]); //[3, 5]
 // 왜 case 0: 은 안되는 걸까??
 
 /*
-🤖 다른 사람의 풀이
+🤖 다른 사람의 풀이 1️⃣
 
 function solution(lottos, win_nums) {
     const rank = [6, 6, 5, 4, 3, 2, 1];
@@ -90,4 +90,24 @@ function solution(lottos, win_nums) {
 }
 
 ⚡️ 맞춘 갯수를 배열의 순위로 인덱스를 미리 만들어놓고 순위 적용; 씽크빅 좀 하신듯
+
+🤖 다른 사람의 풀이 2️⃣
+
+function solution(lottos, win_nums) {
+  let zero = 0;
+  let min = 7;
+
+  lottos.forEach((a) => {
+    if (win_nums.includes(a)) min--; ❗️ 당첨 숫자 증가할 수록 최소 순위 증가
+    else if (a === 0) zero++; ❗️ 0의 카운트 증가
+  });
+  if (min === 7) min = 6;
+
+  let max = min - zero;
+  if (max === 0) max = 1;
+
+  return [max, min];
+}
+
+⚡️ 첫 로또에서 확정된 당첨 숫자가 증가할수록 최저 등수는 높아짐을 이용한 풀이.
 */
