@@ -26,50 +26,63 @@
 function solution(n, lost, reserve) {
   let students = Array(n + 1).fill(1);
   lost = lost.sort((a, b) => a - b);
-  console.log("lost:", lost);
   reserve = reserve.sort((a, b) => a - b);
-  console.log("reserve:", reserve);
 
+  //도난당한 사람
   for (let i = 0; i < lost.length; i++) {
-    //도난당한 사람
     students[lost[i]] -= 1;
   }
+  //여벌있는 사람
   for (let i = 0; i < reserve.length; i++) {
-    //여벌있는 사람
     students[reserve[i]] += 1;
   }
-  console.log("도난여벌 실태:", students);
 
-  // 뒤로 빌려주기
-  for (let i = 0; i < students.length; i++) {
-    if (
-      !students[i] &&
-      students[i - 1] == 2 &&
-      (students[i + 3] == 1 || students[i + 3] == null)
-    ) {
-      //students[i]가 0이고 students[i - 1]가 2면
-      students[i - 1] -= 1;
-      students[i] += 1;
+  for (let i = 1; i < students.length; i++) {
+    if (students[i] == 2 && students[i + 1] == 0) {
+      students[i + 1] += 1;
+      students[i] -= 1;
+    } else if (students[i] == 2 && students[i - 1] == 0) {
+      students[i - 1] += 1;
+      students[i] -= 1;
     }
   }
-  console.log("뒤로 빌려주기", students);
-
-  //앞으로 빌려주기
-  for (let i = students.length; i > 0; i--) {
-    if (!students[i] && students[i + 1] == 2) {
-      //students[i]가 0이고 students[i + 1]가 2면
-      students[i + 1] -= 1;
-      students[i] += 1;
-    }
-  }
-  console.log("앞으로 빌려주기", students);
-
   students.shift();
-  console.log("최종 체육복 실태", students);
   console.log(students.filter((i) => i !== 0).length);
   return students.filter((i) => i !== 0).length;
 }
 
-solution(3, [1, 3], [2]);
-// solution(5, [2, 4], [3]);
-// solution(3, [3], [1]);
+solution(9, [1, 3, 4, 5], [2, 3, 4, 7, 6, 9, 1]);
+
+// 🤬 빌려주는 순서를 뒤로 빌려주는 것 먼저 해서 해결이 안됐던 것! 앞으로 먼저 빌려주면 풀린다 🤬🤬🤬
+
+/*
+🤖 다른 사람의 풀이
+
+function solution(n, lost, reserve) {
+    const students = {};
+    let answer = 0;
+    for(let i = 1; i <= n; i++){
+        students[i] = 1; 👉 객체의 키 값으로 학생 번호로 지정
+    }
+    lost.forEach(number => students[number] -= 1);
+    reserve.forEach(number => students[number] += 1);
+
+    for(let i = 1; i <= n; i++){
+        if(students[i] === 2 && students[i-1] === 0){
+                students[i-1]++;
+                students[i]--;
+        } else if(students[i] === 2 && students[i+1] === 0){
+                students[i+1]++;
+                students[i]--;
+        }
+    }
+    for(let key in students){
+        if(students[key] >= 1){
+            answer++;
+        }
+    }
+    return answer;
+}
+
+🤬 나랑 같은 풀이 방식인데 빌려주는 순서만 달라서 이건 풀리고 내 건 안풀렸음 🤬🤬🤬
+*/
