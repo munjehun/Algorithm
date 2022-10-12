@@ -36,5 +36,10 @@ function solution(A,B){
     return A.reduce((total, val, idx) => total + val * B[idx], 0)
 }
 
-⚡️ reduce에도 index 쓸 수 있는 걸 까먹고 있었다! reduce, filter, map 은 인자로 index와 arr를 받는다는 것을 다시 복기!
+⚡️ reduce에도 index를 쓸 수 있는 걸 까먹고 있었다! 
+    reduce, filter, map 은 인자로 index와 arr를 받는다는 것을 다시 복기!
+
+⚡️ arr.reduce((accumulator, currentValue, currentIndex, array)=>{
+  return ~~~
+});
 */
