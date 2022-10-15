@@ -11,9 +11,7 @@ Finn은 요즘 수학공부에 빠져 있습니다.
 자연수 n이 매개변수로 주어질 때, 연속된 자연수들로 n을 표현하는 방법의 수를 return하는 solution를 완성해주세요.
 */
 
-//while문?
 //순서대로 더하다가 넘어가면 다음 시작 수로 시작
-//s와 같아지면 count +
 function solution(s) {
   let count = 0;
 
