@@ -41,14 +41,5 @@ function solution(n) {
     }
 }
 
-⚡️ while 조건문 안에 n++를 넣을 수도 있다! 
+⚡️ while 조건문 안에 n++를 넣을 수도 있다! n은 자연수이기 때문에 항상 true이기 때문!
 */
-function solution1(n) {
-  var size = n.toString(2).match(/1/g).length;
-  while (n++) {
-    console.log(n);
-    if (size === n.toString(2).match(/1/g).length) return n;
-  }
-}
-
-solution1(7);
