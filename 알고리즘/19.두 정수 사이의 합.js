@@ -24,3 +24,9 @@ function solution(a, b) {
 solution(3, 5);
 solution(3, 3);
 solution(5, 3);
+
+// 다른 사람의 풀이
+function adder(a, b, s = 0) {
+  for (var i = Math.min(a, b); i <= Math.max(a, b); i++) s += i;
+  return s;
+}
