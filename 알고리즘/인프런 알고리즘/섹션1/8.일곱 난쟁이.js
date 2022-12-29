@@ -41,7 +41,12 @@ function solution(arr) {
     for (let j = i + 1; j < arr.length; j++) {
       if (sum - 100 === arr[i] + arr[j]) {
         arr.splice(i,1)
-        arr.splice(j-1,1)
+        arr.splice(j-1,1) ☢️ 인덱스 i부터 지우면 뒤에 인덱스들이 밀려서 한칸씩 앞으로 밀리므로
+
+        또는
+
+        arr.splice(j,1) ☢️ 인덱스 i부터 지우면 뒤에 인덱스들이 밀려서 한칸씩 앞으로 밀리므로 뒤의 j인덱스부터 지워준다.
+        arr.splice(i,1)
       }
     }
   }
