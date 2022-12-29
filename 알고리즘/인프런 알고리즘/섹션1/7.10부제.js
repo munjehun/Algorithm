@@ -33,11 +33,10 @@ console.log(solution(0, arr1));
 function solution(day, arr) {
   let answer = 0;
     for(let i of arr){
-
-      if(arr%10===day){
+      if(arr % 10 === day){
         answer++;
       }
     }
-
+  return answer;
 }
 */
