@@ -22,7 +22,7 @@ console.log(solution(str, "R"));
 function solution(s, t) {
   let answer = 0;
   for(let i of s){
-    if(i===t) answer += 1;
+    if(i===t) answer ++; 💯 갯수 출력 문제는 보통 answer = 0; 으로 하고 카운트업 하는 방식! / +=1과 ++의 차이점은 뭘까?
   }
   return answer;
 }
@@ -30,7 +30,8 @@ function solution(s, t) {
  - 다른 풀이 2
 
  function solution(s, t) {
-  return s.split(t).length - 1;
+  return s.split(t).length - 1; 💯 split으로 자체를 나눠서 길이 -1 하는 방법!
 }
+
 
 */
