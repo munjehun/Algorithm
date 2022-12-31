@@ -22,14 +22,24 @@ function solution(s) {
 
 console.log(solution("ksekkset"));
 
-/* - 다른 풀이
+/* - 다른 풀이 1
 
 function solution(s) {
   let answer = "";
   for (let i = 0; i < s.length; i++) {
-    if (i == s.indexOf(s[i])) answer += s[i]; 💯 중복 문자 찾기는 indexOf() 로 하면 편하다!
+    if (i == s.indexOf(s[i])) answer += s[i]; 
   }
   return answer;
 }
 
+- 다른 풀이 2
+
+function solution(s) {
+  return s
+    .split("")
+    .filter((i, index) => index == s.indexOf(i))
+    .join("");
+}
+
+💯 중복 문자 찾기는 indexOf() 로 하면 편하다!
 */
