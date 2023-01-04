@@ -73,13 +73,10 @@ function solution(arr) {
     sum1 = sum2 = 0; //sum 초기화
 
     for (let j = 0; j < arr.length; j++) {
-      if (i == j) {
-      }
       sum1 += arr[i][j];
       sum2 += arr[j][i];
     }
-
-    answer = Math.max(cross, reverseCross, sum1, sum2);
+    answer = Math.max(cross, reverseCross, sum1, sum2, answer);
   }
   return answer;
 }
