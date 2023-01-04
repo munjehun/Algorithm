@@ -31,22 +31,22 @@ function solution(arr) {
 
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      let flag = 1;
+      let flag = 1; // 원지점 flag를 1으로 초기화!
       for (let k = 0; k < 4; k++) {
         let nx = i + dx[k];
         let ny = j + dy[k];
         if (
-          nx >= 0 &&
-          nx < arr.length &&
+          nx >= 0 && // nx(비교할 x좌표값)가 0 밑으로 가지 않도록
+          nx < arr.length && // 그리고 배열 바깥으로 나가지 않도록
           ny >= 0 &&
           ny < arr.length &&
-          arr[nx][ny] >= arr[i][j]
+          arr[nx][ny] >= arr[i][j] //비교 지점들이 원지점과 같거나 크다면 flag=0으로
         ) {
           flag = 0;
-          break;
+          break; //break는 for문을 종료시킴. continue는 다음 for문으로 넘어감.
         }
       }
-      if (flag) answer++;
+      if (flag) answer++; //비교 지점들보다 원지점이 크다면 flag는 1으로 남아있으므로 answer++
     }
   }
 
