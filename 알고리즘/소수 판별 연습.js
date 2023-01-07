@@ -1,3 +1,5 @@
+// 프로그래머스 레벨1. 소수 만들기 문제 풀이식
+
 //💢 특정 수의 소수 판별
 function isPrime(num) {
   for (let i = 2; i <= Math.sqrt(num); i++) {
@@ -19,12 +21,14 @@ function isPrime1(num) {
   for (let i = 2; i < Math.sqrt(num); i++) {
     if (num % i === 0) return false;
   }
-  return num > 2;
+  return num > 1;
 }
 console.log(isPrime1(462164)); //false
 console.log(isPrime1(541)); //true
 
 //〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️
+
+// 프로그래머스 레벨1. 소수 찾기 문제 풀이식
 
 //💢 에라토스테네스의 체 - 특정 수까지 한 번에 소수 판별
 function solution(n) {
