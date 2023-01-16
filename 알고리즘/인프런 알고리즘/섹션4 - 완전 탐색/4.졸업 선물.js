@@ -17,43 +17,34 @@
 선생님 최소한 1개 이상의 상품을 살 수 있는 예산을 가지고 있습니다
 */
 
-// for문을 돌면서 하나씩 가격을 반값으로 한 다음에 sort해서 예산 전까지 카운트 하며 더해본다.
-// 말 그대로 모든 경우를 봐야 하는 완전탐색!!
+// 💯 for문을 돌면서 하나씩 가격을 반값으로 한 다음에 sort해서 예산 전까지 카운트 하며 더해본다.
+// 💯 말 그대로 모든 경우를 봐야 하는 완전탐색!!
 
-function solution(m, product) {
-  let count = 0;
-  let sumResult = [];
+// function solution(m, product) {
+//   let count = 0;
+//   let sumResult = [];
 
-  for (let i = 0; i < product.length; i++) {
-    product[i][0] /= 2; //for문 한 번 돌 때마다 i번째 가격을 반값으로 처리
-    let sum = 0;
-    let priceSum = [...product].map((price) => price[0] + price[1]);
+//   for (let i = 0; i < product.length; i++) {
+//     product[i][0] /= 2; //for문 한 번 돌 때마다 i번째 가격을 반값으로 처리
+//     let sum = 0;
+//     let priceSum = [...product].map((price) => price[0] + price[1]);
 
-    priceSum.sort((a, b) => a - b);
+//     priceSum.sort((a, b) => a - b);
 
-    for (let j = 0; j < priceSum.length; j++) {
-      sum += priceSum[j];
-      count++;
-      if (sum > m) {
-        sumResult.push(j);
-        break;
-      }
-    }
-    product[i][0] *= 2; //for문 끝날때는 i번째 가격을 다시 원가격으로 복구
-  }
-  return Math.max(...sumResult);
-}
+//     for (let j = 0; j < priceSum.length; j++) {
+//       sum += priceSum[j];
+//       count++;
+//       if (sum > m) {
+//         sumResult.push(j);
+//         break;
+//       }
+//     }
+//     product[i][0] *= 2; //for문 끝날때는 i번째 가격을 다시 원가격으로 복구
+//   }
+//   return Math.max(...sumResult);
+// }
 
-let arr = [
-  [6, 6],
-  [2, 2],
-  [4, 3],
-  [4, 5],
-  [10, 3],
-];
-console.log(solution(28, arr));
-
-/* - 다른 풀이
+// ❌ console.log(solution(41, [[8, 6], [2, 2], [4, 3], [4, 5], [12, 1]])); 의 경우 5가 돼야 하는데 이 코드에선 4가 나온다.
 
 function solution(m, product) {
   let answer = 0;
@@ -76,4 +67,11 @@ function solution(m, product) {
   return answer;
 }
 
-*/
+let arr = [
+  [6, 6],
+  [2, 2],
+  [4, 3],
+  [4, 5],
+  [10, 3],
+];
+console.log(solution(28, arr));
