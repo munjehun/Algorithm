@@ -14,35 +14,18 @@ N개의 작업을 처리한 후 캐시메모리의 상태를 가장 최근 사�
 7 5 3 2 6
 */
 
-// 없으면 넣고 있으면 삽입 정렬!
-
-// 정답 배열의 길이가 지정 길이가 되지 않으면 맨 앞에 unshift()로 넣기.
-// 지정 길이가 됐으면 삽입정렬으로 넣기!
+// 1. 기존 배열에 존재하는지 여부 판별
+// 2. 있으면 => 기존 원소 제거하고 unshift()
+// 3. 없으면 => 그냥 unshift(),
+//  3-1)길이가 size 넘어가면 pop()
 
 function solution(size, arr) {
   let answer = [];
 
   for (let i = 0; i < arr.length; i++) {
-    let tmp = arr[i];
-    // 기존 배열에 있으면 기존원소 삭제
     if (answer.includes(arr[i])) answer.splice(answer.indexOf(arr[i]), 1);
-
-    if (answer.length < size) {
-      answer.unshift(arr[i]);
-    } else {
-      //배열 길이 다 찼을 때
-      if (answer.includes(arr[i])) {
-        let j;
-        for (j = answer.indexOf(arr[i]); j >= 0; j--) {
-          if (answer[j] > tmp) answer[j + 1] = answer[j];
-          else break;
-        }
-        answer[j + 1] = tmp;
-      } else {
-        answer.pop();
-        answer.unshift(arr[i]);
-      }
-    }
+    answer.unshift(arr[i]);
+    if (answer.length > size) answer.pop();
   }
 
   return answer;
