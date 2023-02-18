@@ -16,8 +16,7 @@ N개의 원소로 구성된 자연수 집합이 주어지면,
 첫 번째 줄에 “YES" 또는 ”NO"를 출력한다.
 */
 
-// 부분집합의 총 갯수를 구해야 한다?
-// 부분집합의 원소의 합은 총 원소의 합의 반이 되어야 한다. 그래야 서로소인 두 부분집합이 같아지기 때문.
+// 부분집합의 원소의 합은 원본배열 원소의 합의 반이 되어야 한다. 그래야 서로소인 두 부분집합이 같아지기 때문.
 function solution(arr) {
   let check = Array.from({ length: arr.length }, () => 0);
   let half = arr.reduce((a, b) => a + b) / 2;
@@ -49,6 +48,8 @@ function solution(arr) {
 let arr = [1, 3, 5, 6, 7, 10];
 console.log(solution(arr));
 
+/* - 다른 풀이
+
 function solution(arr) {
   let answer = "NO";
   let total = arr.reduce((a, b) => a + b);
@@ -60,7 +61,6 @@ function solution(arr) {
 
     if (total / 2 === sum) {
       answer = "YES";
-      return;
     } else {
       DFS(L + 1, sum + arr[L]);
       DFS(L + 1, sum);
@@ -69,7 +69,4 @@ function solution(arr) {
   DFS(0, 0);
   return answer;
 }
-
-/* - 다른 풀이
-
 */
