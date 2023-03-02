@@ -13,18 +13,19 @@
 
 function solution(m, arr) {
   let answer = [];
+  let n = arr.length;
   let tmp = Array.from({ length: m }, () => 0);
-  let check = Array.from({ length: m }, () => 0);
+  let check = Array.from({ length: n }, () => 0);
   function DFS(L) {
     if (L == m) {
       answer.push(tmp.slice());
     } else {
-      for (let i = 0; i < arr.length; i++) {
+      for (let i = 0; i < n; i++) {
         if (check[i] !== 1) {
-          tmp[L] = arr[i];
+          tmp[L] = arr[i]; //tmp에 숫자 넣어주기
           check[i] = 1;
           DFS(L + 1);
-          check[i] = 0; //💯 턴이 끝나면 체크를 풀어주는 게 중요!
+          check[i] = 0; //❗️ 턴이 끝나면 체크를 풀어주는 게 중요 ❗️
         }
       }
     }
