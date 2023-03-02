@@ -21,7 +21,9 @@ N은 가장 윗줄에 있는 숫자의 개수를 의미하며 F는 가장 밑에
 답이 존재하지 않는 경우는 입력으로 주어지지 않는다.
 */
 
-//N과 가장 밑에 있는 숫자가 주어져 있을 때 가장 윗줄에 있는 숫자를 구하기
+// 공식을 보면 답에 해당하는 배열에 원소의 각 순서에 3C0 3C1 3C2 3C3 을 곱해서 f가 나오게 된다.
+// 조합을 for문으로 작성하여 조합의 배열을 만들고,
+// 순열 공식을 이용하여, 각 순열과 조합의 같은 위치의 원소를 곱했을 때 f가 나오게 하면 된다!
 
 function solution(n, f) {
   let answer;
@@ -43,8 +45,8 @@ function solution(n, f) {
     } else {
       for (let i = 1; i < ch.length; i++) {
         if (ch[i] == 0) {
-          ch[i] = 1;
           p[L] = i;
+          ch[i] = 1;
           DFS(L + 1, sum + b[L] * p[L]);
           ch[i] = 0;
         }
@@ -60,3 +62,45 @@ function solution(n, f) {
 }
 
 console.log(solution(4, 16)); //3 1 2 4
+
+function solution(n, f) {
+  let answer;
+
+  // 조합 구하기
+  let dy = Array.from(Array(n + 1), () => Array(n + 1).fill(0));
+  let combiArr = [];
+
+  function combi(n, r) {
+    if (dy[n][r]) return dy[n][r];
+    if (n == r || r == 0) return 1;
+    else return (dy[n][r] = combi(n - 1, r - 1) + combi(n - 1, r));
+  }
+
+  for (let i = 0; i < n; i++) {
+    combiArr.push(combi(n - 1, i));
+  }
+
+  // 순열 구하기
+  let check = Array.from({ length: n + 1 }, () => 0);
+  let tmp = Array.from({ length: n }, () => 0);
+
+  function DFS(L, sum) {
+    if (answer) return;
+    if (L === n && sum === f) {
+      answer = tmp.slice();
+    } else {
+      for (let i = 1; i <= n; i++) {
+        if (check[i] !== 1) {
+          tmp[L] = i;
+          check[i] = 1;
+          DFS(L + 1, sum + tmp[L] * combiArr[L]);
+          check[i] = 0;
+        }
+      }
+    }
+  }
+
+  DFS(0, 0);
+
+  return answer;
+}
